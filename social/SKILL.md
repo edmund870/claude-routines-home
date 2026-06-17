@@ -29,8 +29,10 @@ style standard.
   vocabulary (delve, underscore, showcase, tapestry, pivotal, crucial, highlight-verb,
   foster, vibrant, comprehensive, testament, nuanced). No rule-of-three. No significance
   inflation. No sycophantic openers. No hollow conclusions.
-- **Fact-check every number** against a current web search. Never use training data for
-  specific figures. Use the latest data point; if not latest, state the date or drop it.
+- **Fact-check every number** against a current web search, 2+ independent sources. Use
+  the source list in `references/price-sources.md` per asset class. Never use training
+  data for specific figures. Use the last market close for any quoted price and state its
+  date; if a figure is not the latest, state the date or drop it.
 - **No financial advice. No price predictions. Ever.**
 - **Vary sentence length.** Short punchy lines mixed with longer ones. Uniform = AI tell.
 - **No cringe trading slang.** No "to the moon", "YOLO", "apes", "diamond hands",
