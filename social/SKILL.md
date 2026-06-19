@@ -20,7 +20,8 @@ debate), never at the cost of accuracy.
 This skill is the HOW of writing each post. The routine instructions are the WHAT and
 WHEN (which platforms, accounts, cadence, scheduling). Defer to the routine for platform
 account IDs, scheduling, and dedup. Defer to `humanizer/SKILLS.md` for the line-level
-style standard.
+style standard. Apply the account's documented voice (tone, pillars, signature language)
+as provided in the routine/manager context.
 
 ## Hard rules (non-negotiable, every post)
 
@@ -37,14 +38,14 @@ style standard.
 - **Vary sentence length.** Short punchy lines mixed with longer ones. Uniform = AI tell.
 - **No cringe trading slang.** No "to the moon", "YOLO", "apes", "diamond hands",
   "sending it".
-- **No hashtags on X.** Bluesky 1-2 max. LinkedIn 3 max. Telegram none.
+- **No hashtags on X.** Bluesky 1-2 max. LinkedIn 0-2. Telegram none.
 
 ## Platforms in scope
 
 | Platform | Voice | Hard limit | Notes |
 |----------|-------|-----------|-------|
-| X / Twitter | sharp, direct, contrarian | 150-280 chars target, 600 cap | 5 standalone posts/run, no hashtags |
-| LinkedIn | authority, AEO-first | hook in first 210 chars | 1/day weekday, no links in body |
+| X / Twitter | sharp, direct, contrarian | 150-280 chars target, 600 cap | 3 standalone posts/run, no hashtags |
+| LinkedIn | authority, AEO-first | hook in first ~140 chars (mobile) | 1 per 48h (gated), no links in body |
 | Bluesky | dry, precise, detached | 300 chars hard | fintech/quant audience, no brand mentions |
 | Telegram | live signal | 150-200 words | fire immediately, 1 emoji anchor |
 
@@ -73,7 +74,7 @@ professional trader stop scrolling? If not, find a sharper hook.
 ## Hook formulas (markets-tuned)
 
 **Data / number:**
-- "[Specific stat] — and almost nobody is positioned for it."
+- "[Specific stat]. Almost nobody is positioned for it."
 - "[X]% of [market] is doing [thing]. The last time that happened: [outcome]."
 - "The number everyone missed in [release]: [stat]."
 
@@ -86,44 +87,52 @@ professional trader stop scrolling? If not, find a sharper hook.
 - "Why [market move] actually happened (it's not [the obvious reason]):"
 - "[Effect] is a second-order consequence of [cause]. Here's the chain."
 
-**Open tension (good for the 5th X post):**
+**Open tension (good for the last X post):**
 - "The part nobody can explain yet: [unresolved divergence]."
 - "If [condition] holds, [implication]. If it breaks, [other implication]."
 
 ## Per-platform structure
 
-### X / Twitter — 5 standalone posts, one hook, five angles
+### X / Twitter — 3 standalone posts, one hook, three angles
+Algorithm tactics in `references/x-playbook.md`. Optimize for bookmarks + retweets, stay
+in-niche, specific over generic, no engagement-bait CTAs. Pick the 3 strongest angles:
 1. The hook stated directly, no wind-up
 2. The mechanism (why it exists / what it means structurally)
-3. The counterintuitive angle (what most get wrong)
-4. The implication (what a trader does now)
-5. The open question or unresolved tension
+3. The implication (what a trader does now), or the open unresolved tension
 
-Each post stands alone, not a thread. `$TICKER` format. First line stops the scroll.
+(Other angles to pull from: the counterintuitive thing most get wrong; a second-order
+consequence.) Each post stands alone, not a thread. `$TICKER` format. First line stops the
+scroll.
 
 ### Bluesky — 5 standalone posts, different framing from X
+Apply the same craft principles as `references/x-playbook.md` (niche consistency,
+specificity, save/share-worthy, no bait) — see its Bluesky note. **Hard 300-char limit,
+count before posting.** Dry, precise, detached; fintech/quant audience; no brand mentions;
+1-2 hashtags max.
 1. The number, stated baldly, no framing
 2. One sentence on what it means mechanically
 3. The counterintuitive / commonly misunderstood part
 4. What a trader does with it
 5. One dry observation or open question
 
-Tone: precise, slightly detached. No brand mentions.
-
-### Telegram — 1 post
-- Para 1: the signal in one sentence, answer upfront
-- Para 2: the mechanism / why it matters structurally
+### Telegram — 1 post (mixed X + LinkedIn register)
+Open with an X-style sharp one-line signal (the punchy hook, stated plainly), then expand
+with LinkedIn-style reasoning. 150-200 words, 3 short paragraphs:
+- Para 1: the signal in one sentence, answer upfront (X punch)
+- Para 2: the mechanism / why it matters structurally (LinkedIn reasoning)
 - Para 3: the implication, what to watch
 - One emoji anchor at top. Bold key terms with *asterisks*. No filler phrases.
 
 ### LinkedIn — 1 post, weekday only
-- Lead with a bold observation or surprising stat. Never start with "I".
-- Hook lands in the first 210 chars (before the fold).
+Full tactics + hook formulas in `references/linkedin-playbook.md`.
+- Lead with a bold observation, surprising stat, or real "what broke" detail. Never "I".
+- Hook lands in the first ~140 chars (mobile cutoff), 210 desktop.
+- "How I" beats "How to". One specific number in the first sentence.
 - Answer the implicit question in the first 2-3 lines (AEO).
-- 3-5 short paragraphs, line breaks between each.
-- End with a genuine question for experienced traders.
-- No URLs in body (cuts reach 40-50%); link via first comment if needed.
-- Never reuse prior LinkedIn text (422 rejection).
+- Length 900-1,300 chars. Line breaks between ideas, not every sentence.
+- Close with a named-topic question, never generic "Thoughts?"/"Agree?" (suppressed).
+- 0-2 hashtags at end. No URLs in body (~60% reach cut); link via first comment.
+- Optimize for saves (5x a like). Never reuse prior LinkedIn text (422 rejection).
 
 ## Content pillars (fallback when no trending hook)
 
