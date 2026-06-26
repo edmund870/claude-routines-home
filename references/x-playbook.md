@@ -42,8 +42,10 @@ engagement bait. Replying to and quoting high-credibility accounts lifts visibil
 | Retweets | useful info people want to share, representational value (it speaks for them), an information advantage (you had it first) |
 | Bookmarks/saves | data and stats they will reference later, frameworks, how-it-works mechanics |
 
-For this account, **bookmarks and retweets are the priority** — data and mechanics that a
-trader saves or shares. Likes are cheap.
+For this account, **replies are the highest-weight signal** — replies indicate genuine
+engagement and debate. **Bookmarks and retweets are the priority** — data and mechanics that a
+trader saves or shares. Likes are cheap. Strategy: encourage replies through open tension and
+unresolved questions that traders want to complete in the thread.
 
 ## Markets-tuned application
 
@@ -52,13 +54,26 @@ trader saves or shares. Likes are cheap.
   dealers will hedge the gamma" beats "interesting moves in space stocks".
 - **Specificity drives saves:** a precise stat or mechanic gets bookmarked. Vagueness gets
   scrolled past (negative signal).
-- **First hour matters:** scheduled posts should land when the markets audience is active
-  (US pre-market / open). Early engagement sets the ceiling.
+- **First hour matters — critical 15–30 min window:** scheduled posts should land when the
+  markets audience is active (US pre-market / open). Engagement velocity in the first
+  15–30 minutes is the single biggest distribution lever. Early replies and bookmarks set
+  the ceiling for total reach. A post with strong early velocity (1–2 replies in the first
+  10 min, 3+ bookmarks by 15 min) unlocks wider distribution to non-followers.
 - **Representational value drives retweets:** write the take a trader wishes they had
   posted. They retweet to represent their own view.
+- **Strong first-line hooks:** every post opens with a specific number, clear implication, or
+  observable tension in the very first line. This stops the scroll and improves early velocity.
+  "XYZ is at [number], the highest since [date]" beats "interesting move in XYZ" on the first
+  line.
+- **Post scannability:** use short paragraphs and line breaks. Never dense text blocks. Traders
+  scan — make the key number or tension visible in the first 1–2 lines so they can assess
+  worth in a glance.
 - **Open tension over bait:** the routine's 3rd/last post can end on a genuine unresolved
-  question ("the divergence nobody has explained yet: ..."). That earns replies organically.
-  Never "agree? 👇".
+  question ("the divergence nobody has explained yet: ...", "the gap between the data they
+  use and current reality remains..."). That earns replies organically. Never "agree? 👇".
+- **Constructive framing wins long-term:** neutral or slightly constructive observations
+  outperform overtly negative or combative takes, even when the negative take gets initial
+  engagement. Tweepcred builds on consistency and constructiveness, not incendiary takes.
 
 ## Pitfalls (lose reach)
 
@@ -69,6 +84,7 @@ trader saves or shares. Likes are cheap.
 - Over-posting in a burst — hurts per-post engagement rate (the routine staggers for this)
 - Toxicity / report-bait — heavy negative-signal penalty
 - Passive phrasing with no hook — "check out this data" underperforms the data itself
+- Links in the main post — external links suppress distribution. Keep text standalone.
 
 ## Manual-only levers (not used by the automated routine)
 
