@@ -49,6 +49,12 @@ unresolved questions that traders want to complete in the thread.
 
 ## Markets-tuned application
 
+- **Short posts with one number beat explainer chains (EMERGING — 3 weeks confirmed):**
+  Under 150 chars with ONE specific number plus a divergent outcome outperforms longer
+  posts on engagement rate. Week 3 top performers: "Dow ATH vs NFP miss" (18 imp, 38.9%
+  eng), "Bitcoin ETF outflow reversal" (28 imp, 28.6% eng), "June payrolls 57K vs 110K
+  consensus" (18 imp, 27.8% eng). Every one is a single number plus an immediate divergent
+  outcome. Bias post length short over explainer-chain long.
 - **Niche consistency (SimCluster + TwHIN):** every post is markets. Specific tickers,
   specific numbers, specific mechanics. "$SPCX IV is elevated into the options launch,
   dealers will hedge the gamma" beats "interesting moves in space stocks".

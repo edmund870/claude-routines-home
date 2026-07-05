@@ -313,6 +313,18 @@ If you're {winning behavior}, you already won.
 ```
 Why: receipt list is a dwell-time machine. Binary close forces side-picking.
 
+## Signal #3 — Mechanism Reveals Beat Recaps (ACTIVE RULE — 7+ posts confirmed)
+
+Options/macro posts that reveal a mechanism (how/why, not just what) outperform pure news
+recaps **3-7x on impressions**. Confirmed across posts #1, #3, #6, #7, #12, #29, #30
+(avg ~97 imp) vs recap posts #22, #27, #28 (avg ~23 imp). Reference wins: "Gamma exposure —
+SPY $3.6M put loss at 740 strike, max pain $746, QQQ $2.5M puts at 700" (138 imp). "87%
+gross margin on Micron HBM — $11.52B data center unit at software-grade margins" (484 imp).
+
+**Rule:** Never post a pure recap ("Fed held rates, dot plot hawkish"). Always reveal the
+mechanism causing the number, then the market implication. Recap-only posts are the single
+strongest negative signal found in the data so far.
+
 ## Choosing which formula
 
 | Topic type | Best formula |
