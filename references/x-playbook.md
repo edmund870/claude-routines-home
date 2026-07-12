@@ -49,17 +49,19 @@ unresolved questions that traders want to complete in the thread.
 
 ## Markets-tuned application
 
-- **Short posts with one number beat explainer chains (EMERGING — 3 weeks confirmed):**
-  Under 150 chars with ONE specific number plus a divergent outcome outperforms longer
-  posts on engagement rate. Week 3 top performers: "Dow ATH vs NFP miss" (18 imp, 38.9%
-  eng), "Bitcoin ETF outflow reversal" (28 imp, 28.6% eng), "June payrolls 57K vs 110K
-  consensus" (18 imp, 27.8% eng). Every one is a single number plus an immediate divergent
-  outcome. Bias post length short over explainer-chain long.
+- **Short posts with one number beat explainer chains (ACTIVE RULE — 4 weeks confirmed):**
+  Under 150 chars with ONE specific number plus a divergent outcome consistently
+  outperforms longer posts on engagement rate. Week 4 top performers still follow the
+  pattern: one specific data point, one immediate contrasting outcome, no filler. Bias
+  short over long. When a mechanism genuinely needs room, 280 max.
 - **Niche consistency (SimCluster + TwHIN):** every post is markets. Specific tickers,
   specific numbers, specific mechanics. "$SPCX IV is elevated into the options launch,
   dealers will hedge the gamma" beats "interesting moves in space stocks".
-- **Specificity drives saves:** a precise stat or mechanic gets bookmarked. Vagueness gets
-  scrolled past (negative signal).
+- **Specificity drives saves (bookmarkable content gap detected):** a precise stat or
+  mechanic gets bookmarked. Vagueness gets scrolled past. Current data: zero bookmarks on
+  184 original posts (bookmarks concentrated on replies to large accounts). Testing whether
+  reference content (frameworks, historical tables, dated calendars) earns saves on
+  originals remains unexplored — prioritize this test.
 - **First hour matters — critical 15–30 min window:** scheduled posts should land when the
   markets audience is active (US pre-market / open). Engagement velocity in the first
   15–30 minutes is the single biggest distribution lever. Early replies and bookmarks set
