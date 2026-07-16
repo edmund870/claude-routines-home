@@ -325,6 +325,24 @@ gross margin on Micron HBM — $11.52B data center unit at software-grade margin
 mechanism causing the number, then the market implication. Recap-only posts are the single
 strongest negative signal found in the data so far.
 
+**Caveat (added Jul 9 2026):** post #33 (max pain mechanics, a clean mechanism reveal)
+logged only 4 impressions, the weakest result of any mechanism-reveal post so far. Topic
+and delivery may matter as much as the reveal-vs-recap framing. Don't apply this rule
+blind to any macro topic; a mechanism reveal on a low-interest topic can still flop.
+
+## Signal #1 — Sharp Reframes Beat Straight Commentary (ACTIVE RULE — Strong, 3 posts
+dramatic outperformance, promoted Jul 16 2026)
+
+Posts that open with a specific number reframing a story or data release the market
+already had in front of it outperform posts that narrate the news directly, by 2-5x.
+Post #17 (AI IPO cluster, Number-led): 263 imp / 176 reach. Post #39 (GBP/JPY CFTC
+positioning record, Number-led): 219 imp / 176 reach, third-highest of any post logged.
+Post #2 (BTC ETF outflows, Info asymmetry): 99 imp, vs ~40-55 avg baseline.
+
+**Rule:** Do not lead with the news itself ("Fed held rates today"). Lead with the number
+that reframes it — the angle nobody else is stating plainly. The story can be one everyone
+already saw; the reframe is what earns the stop.
+
 ## Choosing which formula
 
 | Topic type | Best formula |
@@ -344,6 +362,20 @@ strongest negative signal found in the data so far.
 - **Specific number in the first sentence** raises expand-rate ~35%. $873.47 beats $900.
 - **Real failure in the first 3 lines** outperforms polished framing by ~8.5x. Lead with
   what broke.
+
+## Voice quality signal (EMERGING — 5 posts, not yet an Active Rule)
+
+AI-generated writing patterns correlate with lower reach even at small follower counts:
+long undifferentiated paragraphs, vague hedging closers, generic "how should traders
+position?" questions. Posts #10, #13, #14 (Iran/semis, Apple WWDC, crypto weekly) all show
+these patterns and cluster at 11-40 impressions. Posts #33, #34 add two more confirming
+data points closing on generic reflective questions, scoring the two lowest impression
+counts logged to date (4 and 8). Posts with sharper first-person voice and specific
+mechanism reveals (#2, #3, #17) still outperform.
+
+**Guidance (not yet a hard rule):** favor sharp first-person voice and specific mechanism
+reveals over long undifferentiated paragraphs and generic reflective closers. Watch for
+promotion to Active Rule as more posts confirm.
 
 ## Never do
 
