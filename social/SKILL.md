@@ -44,7 +44,7 @@ as provided in the routine/manager context.
 
 | Platform | Voice | Hard limit | Notes |
 |----------|-------|-----------|-------|
-| X / Twitter | sharp, direct, contrarian | 150-280 chars target, 600 cap | 3 standalone posts/run, no hashtags |
+| X / Twitter | sharp, direct, contrarian | 150-280 chars target, 600 cap | 1 post/run, thread every 4th run, media attached, no hashtags |
 | LinkedIn | authority, AEO-first | hook in first ~140 chars (mobile) | 1 per 48h (gated), no links in body |
 | Bluesky | dry, precise, detached | 300 chars hard | fintech/quant audience, no brand mentions |
 | Telegram | live signal | 150-200 words | fire immediately, 1 emoji anchor |
@@ -93,16 +93,17 @@ professional trader stop scrolling? If not, find a sharper hook.
 
 ## Per-platform structure
 
-### X / Twitter — 3 standalone posts, one hook, three angles
-Algorithm tactics in `references/x-playbook.md`. Optimize for bookmarks + retweets, stay
-in-niche, specific over generic, no engagement-bait CTAs. Pick the 3 strongest angles:
-1. The hook stated directly, no wind-up
+### X / Twitter — 1 post/run (hybrid: thread every 4th run)
+Algorithm tactics in `references/x-playbook.md`. Optimize for reach + bookmarks, stay
+in-niche, specific over generic, **attach a chart/terminal-card image** (media = ~4.5x reach).
+Most runs post ONE standalone post built on the strongest single angle:
+1. The hook stated directly, no wind-up (first line stops the scroll)
 2. The mechanism (why it exists / what it means structurally)
-3. The implication (what a trader does now), or the open unresolved tension
+3. The read/kicker — one skeptical declarative line, OR a deliberate question when farming replies
 
-(Other angles to pull from: the counterintuitive thing most get wrong; a second-order
-consequence.) Each post stands alone, not a thread. `$TICKER` format. First line stops the
-scroll.
+Every 4th run posts ONE connected thread (2-4 tweets, clean linear chain) for dwell/bookmarks.
+Winning format: "Why X:" lead → 2-3 specific numbers → skeptical kicker. `$TICKER` format.
+No take-free newswire recitation; no hashtags; no engagement-bait CTAs.
 
 ### Bluesky — 5 standalone posts, different framing from X
 Apply the same craft principles as `references/x-playbook.md` (niche consistency,

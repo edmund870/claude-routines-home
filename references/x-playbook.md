@@ -1,122 +1,179 @@
 # X / Twitter Playbook — Algorithm Optimization
 
-Grounded in Twitter's open-source recommendation algorithm. Use when drafting or debugging
+Grounded in the open-source **xai-org/x-algorithm** rewrite (May 2026) plus 8 weeks of this
+account's own analytics (OpticAlpha, 2,316 posts over 43 days). Use when drafting or debugging
 X posts for reach.
 
-**Scope note for the automated routine:** the routine posts 3 standalone, scheduled posts
-per run with no hashtags, no engagement bait, and no financial advice. The ranking models
-and signal logic below all apply. Where this playbook suggests reply-bait CTAs ("drop it in
-replies 👇", "like if you agree") or threads, those are MANUAL-only — the automated routine
-uses an organic open question or lingering tension instead, never a bait CTA.
+**Scope note for the automated routine:** each run posts **1 standalone post**, and **every 4th
+run posts ONE connected thread (2–4 tweets)** chained via Buffer. No hashtags, no engagement-bait
+CTAs, no financial advice. Most posts carry an **attached chart/card image**. The mechanics below
+apply to every post. Where this playbook mentions reply-driving CTAs ("drop it in replies 👇",
+"like if you agree"), those are MANUAL-only — the routine uses an organic question or a declarative
+kicker instead of a bait CTA.
 
 ---
 
-## The ranking models (what to optimize for)
+## The ranking spine (2026)
 
-**Real-graph** — predicts whether your followers will interact. Early follower engagement
-widens distribution to non-followers. Write what your followers will actually engage with.
+The 2023 stack (Real-graph, SimClusters, TwHIN, Tweepcred) is **obsolete**. The May 2026 rewrite
+eliminated all hand-engineered features — do not optimize for those models, they no longer exist.
 
-**SimClusters** — community detection. Your post spreads if it resonates inside a tight
-community. Pick ONE clear topic per post, use the community's language and terminology,
-be genuinely useful to that niche. Mixed-topic posts confuse the model.
+**Ranker = Phoenix**, a Grok-based transformer. It reads the user's engagement-history sequence and
+predicts probabilities for 15 candidate actions. Your post's score is:
 
-**TwHIN** — maps you and your content to topics. Stay in your lane (markets/trading) so the
-model keeps mapping you to the right audience. Consistency compounds topical authority.
+`Final Score = Σ( weight_i × P(action_i) )`
 
-**Tweepcred** — reputation/authority score. Higher-credibility accounts get more
-distribution. Built through consistent quality posting and real engagement, destroyed by
-engagement bait. Replying to and quoting high-credibility accounts lifts visibility (manual).
+**Positive signals** (push content UP): favorite, reply, repost, quote, click, profile_click,
+video_view, photo_expand, share, **dwell** (time spent on the post), follow_author.
 
-## Signals the system tracks
+**Negative signals** (push content DOWN): not_interested, block, mute, report.
 
-**Explicit (high weight):** likes, replies, retweets, quote tweets.
-**Implicit:** profile visits, link clicks, dwell time, **bookmarks/saves**.
-**Negative (heavy penalty):** block, report, mute, unfollow, fast scroll-past.
+**On weights:** xAI does **not** publish the weight values. Optimize for signal *direction* — which
+signals fire and whether they're positive or negative — never for made-up multipliers. Third-party
+figures floating around ("replies 27x", "report 369x", "velocity 1000x", e.g. teract.ai) are
+**unverified/fabricated** and must not be cited as fact.
+
+## Reach is out-of-network
+
+Distribution to non-followers runs through **Phoenix Retrieval**, a two-tower embedding
+similarity search. Your post gets an embedding; it surfaces to users whose recent engagement
+embeds nearby. This account is **96.5% non-followers**, so nearly all reach is OON — retrieval,
+not your follower graph, decides who sees you.
+
+- **Discovery = your post's embedding matching what the target community (markets) engaged with.**
+  This demands **ruthless topical consistency**. Off-topic content is not "diluted" — it embeds
+  somewhere no market audience lives, so it is effectively **invisible**.
+- **Author Diversity Scorer** attenuates repeated appearances from the same author in a feed.
+  Burst-posting cannibalizes your own reach → **stagger posts, ~90 min minimum spacing**.
+- **AgeFilter** — recency still matters. Post into your audience's active window.
+- **DedupConversationFilter** shows only ONE branch of a conversation. Design threads as a single
+  clean linear chain (each tweet replying to the previous), not a branching tree.
 
 ## What triggers each signal
 
 | Want | Trigger |
 |---|---|
-| Likes | novel insight, memorable phrasing, a strong opinion backed by data |
-| Replies | a real question, a genuine debate, an incomplete thought that invites completion |
-| Retweets | useful info people want to share, representational value (it speaks for them), an information advantage (you had it first) |
-| Bookmarks/saves | data and stats they will reference later, frameworks, how-it-works mechanics |
+| favorite | novel insight, memorable phrasing, a strong opinion backed by data |
+| reply | a real question, a genuine debate, an incomplete thought that invites completion |
+| repost / quote | useful info people want to share, representational value (it speaks for them), an information edge (you had it first) |
+| photo_expand | an attached chart/terminal card worth tapping into |
+| dwell | a post that holds the eye — a thread, a layered read, a number that makes them stop and think |
+| profile_click / follow_author | a take compelling enough that they want more from you (currently our biggest gap) |
 
-For this account, **replies are the highest-weight signal** — replies indicate genuine
-engagement and debate. **Bookmarks and retweets are the priority** — data and mechanics that a
-trader saves or shares. Likes are cheap. Strategy: encourage replies through open tension and
-unresolved questions that traders want to complete in the thread.
+---
 
-## Markets-tuned application
+## Threads: hybrid policy
 
-- **Short posts with one number beat explainer chains (ACTIVE RULE — 4 weeks confirmed):**
-  Under 150 chars with ONE specific number plus a divergent outcome consistently
-  outperforms longer posts on engagement rate. Week 4 top performers still follow the
-  pattern: one specific data point, one immediate contrasting outcome, no filler. Bias
-  short over long. When a mechanism genuinely needs room, 280 max.
-- **Niche consistency (SimCluster + TwHIN):** every post is markets. Specific tickers,
-  specific numbers, specific mechanics. "$SPCX IV is elevated into the options launch,
-  dealers will hedge the gamma" beats "interesting moves in space stocks".
-- **Specificity drives saves (bookmarkable content gap detected):** a precise stat or
-  mechanic gets bookmarked. Vagueness gets scrolled past. Current data: zero bookmarks on
-  184 original posts (bookmarks concentrated on replies to large accounts). Testing whether
-  reference content (frameworks, historical tables, dated calendars) earns saves on
-  originals remains unexplored — prioritize this test.
-- **First hour matters — critical 15–30 min window:** scheduled posts should land when the
-  markets audience is active (US pre-market / open). Engagement velocity in the first
-  15–30 minutes is the single biggest distribution lever. Early replies and bookmarks set
-  the ceiling for total reach. A post with strong early velocity (1–2 replies in the first
-  10 min, 3+ bookmarks by 15 min) unlocks wider distribution to non-followers.
-- **Representational value drives retweets:** write the take a trader wishes they had
-  posted. They retweet to represent their own view.
-- **Strong first-line hooks:** every post opens with a specific number, clear implication, or
-  observable tension in the very first line. This stops the scroll and improves early velocity.
-  "XYZ is at [number], the highest since [date]" beats "interesting move in XYZ" on the first
-  line.
-- **Post scannability:** use short paragraphs and line breaks. Never dense text blocks. Traders
-  scan — make the key number or tension visible in the first 1–2 lines so they can assess
-  worth in a glance.
-- **Open tension over bait:** the routine's 3rd/last post can end on a genuine unresolved
-  question ("the divergence nobody has explained yet: ...", "the gap between the data they
-  use and current reality remains..."). That earns replies organically. Never "agree? 👇".
-- **Constructive framing wins long-term:** neutral or slightly constructive observations
-  outperform overtly negative or combative takes, even when the negative take gets initial
-  engagement. Tweepcred builds on consistency and constructiveness, not incendiary takes.
+Threads are no longer manual-only. **Every 4th routine run posts ONE connected thread (2–4 tweets)**
+chained via Buffer; the other runs post a single standalone.
+
+- **Why:** threads earn **dwell** (a positive signal) by holding attention across tweets, and drive
+  bookmarks/shares of reference content.
+- **Cost:** threads sacrifice initial reach (the first tweet must carry retrieval on its own). So
+  treat threads as a **rotation lever for dwell/bookmarks**, not the default posture for a
+  reach-starved account.
+- **Build them linear:** each tweet replies to the previous one (DedupConversationFilter shows only
+  one branch). No side-replies, no branching.
+
+## Media, not links
+
+**Attach a chart/terminal-card image to most posts** (via Buffer media). This is a reversal of the
+old "links suppress distribution" rule — the account's own data shows posts **with** an image card
+get **79 vs 18 avg impressions (~4.5x more reach)**, consistent with the photo_expand positive
+signal.
+
+- Prefer **attached media** over bare external outbound URLs. A raw link with no media still adds
+  nothing to retrieval — attach a card instead.
+- **Video is an untapped lever** — video_view is a predicted positive signal and we post none.
+  Worth testing (short chart animations, screen-capture walkthroughs).
+
+## Data-backed format rules
+
+*(from 2,316 posts over 43 days)*
+
+- **Hashtags: banned** — now data-backed. 7 vs 35 avg impressions, 0.9% vs 4.5% ER. They hurt reach.
+- **Questions: a deliberate engagement-farm lever — not every post, not banned.** Question-closes
+  get lower reach (24 vs 32 imp) but farm replies, which are the growth engine. So:
+  - **Reach-oriented posts** end on a **declarative one-line kicker**.
+  - **Engagement-farm posts** end on a **question**. Rotate between the two.
+- **Length** (bias short for ER; go long only when a mechanism needs it *and* media is attached):
+  - `<100 chars` → ~50 imp
+  - `100–150` → ~24 imp but **highest ER (12.7%)**
+  - `150–280` (89% of posts) → ~29 imp
+  - `280–600` → ~75 imp (best reach, lowest ER — works **only** with a chart/link attached)
+  - **600 hard cap** stays.
+- **Cashtags:** shown, but lower ER (1.9% vs 5.2%). Use where genuinely relevant; not as a reach hack.
+- **Reach days:** Thursday & Friday over-index. Mon/Wed weakest. Weekend ER higher, reach flat.
+- **Winning format:** "Why X:" lead → 2–3 specific numbers → one-line skeptical kicker. Use a
+  contrast device ("Same news. Opposite read."). **BAN take-free newswire recitation** — pure stat
+  dumps with no read were the low performers.
+- **Follows + bookmarks ≈ zero** (27 follows + 22 bookmarks across 43 days, mostly earned by replies
+  under large accounts, not originals). This is the explicit gap to close: write posts compelling
+  enough to earn a **profile_click / follow_author**, and keep a strong bio/positioning so the click
+  converts. Testing whether reference content (frameworks, historical tables, dated calendars) earns
+  saves on originals remains unexplored — prioritize this test.
+
+## Engagement-farm rotation (operator-directed)
+
+Blend these with the analytical core — they supplement it, they don't replace it. Rotate levers so
+no single tactic saturates:
+
+- **(a)** End-of-post question / rhetorical prompt.
+- **(b)** "Why is the market red/green" obvious-take posts.
+- **(c)** Trigger-a-group takes ("index funds suck" / "individual stocks suck") — **spicy, not
+  toxic.** block/mute/report are negative signals; a take that gets you reported costs more than it
+  earns.
+- **(d)** Motivational posts.
+- **(e)** Famous-investor quotes (Buffett etc.).
+
+## Craft that still holds
+
+- **Niche consistency:** every post is markets. Specific tickers, numbers, mechanics. "$SPCX IV is
+  elevated into the options launch, dealers will hedge the gamma" beats "interesting moves in space
+  stocks". (Now enforced by retrieval, not TwHIN — same conclusion, harder edge.)
+- **First hour matters:** land when the markets audience is active (US pre-market / open). Early
+  engagement velocity feeds AgeFilter and seeds retrieval.
+- **Strong first-line hooks:** open with a specific number, clear implication, or observable tension
+  in the first line. "XYZ is at [number], the highest since [date]" beats "interesting move in XYZ".
+- **Scannability:** short paragraphs and line breaks. Make the key number visible in the first 1–2
+  lines so a scanning trader can assess worth at a glance (helps dwell without a wall of text).
+- **Constructive framing wins long-term:** neutral or slightly constructive observations outperform
+  combative takes over time; incendiary posts risk block/mute/report.
 
 ## Pitfalls (lose reach)
 
-- Generic statements ("markets are volatile") — no community resonance, scrolled past
-- Engagement bait ("like if you agree", "RT this") — Tweepcred damage over time
-- Unclear audience — if it is not clearly for traders, the model will not push it
-- Off-niche pivots — confuses TwHIN, dilutes distribution
-- Over-posting in a burst — hurts per-post engagement rate (the routine staggers for this)
-- Toxicity / report-bait — heavy negative-signal penalty
-- Passive phrasing with no hook — "check out this data" underperforms the data itself
-- Links in the main post — external links suppress distribution. Keep text standalone.
+- Off-topic / off-niche content — embeds away from the markets community, effectively invisible.
+- Hashtags — data-backed reach and ER killer.
+- Bare external links with no media — no retrieval lift; attach a card instead.
+- Take-free newswire stat dumps — lowest performers.
+- Burst-posting — Author Diversity Scorer attenuates you; stagger ~90 min.
+- Toxicity / report-bait — direct negative signals (block/mute/report).
+- Branching threads — DedupConversationFilter hides all but one branch; keep it linear.
+- Passive phrasing with no hook — "check out this data" underperforms the data itself.
 
 ## Manual-only levers (not used by the automated routine)
 
-- Threads (5-8 tweets, each adding info) often outperform single posts
-- Replying to top accounts and quote-tweeting to build Tweepcred
-- Direct reply-driving CTAs
+- Replying to and quote-tweeting high-reach accounts (earns clicks/replies on their surface).
+- Direct reply-driving CTAs.
 
 ## Bluesky (same craft, different algo)
 
-Bluesky does not run Twitter's ranking models (it is feed/chronological-based), but the
-CRAFT principles here transfer directly: stay in the markets niche, lead with the specific
-number or mechanic, write save/share-worthy posts, no engagement bait. What does NOT
-transfer: Tweepcred-style reputation scoring and reply-velocity ranking.
+Bluesky does not run Phoenix (it is feed/chronological-based), but the CRAFT principles transfer:
+stay in the markets niche, lead with the specific number or mechanic, write save/share-worthy posts,
+no hashtags-as-bait. What does NOT transfer: Phoenix retrieval/embedding reach and the
+positive/negative signal weighting.
 
 Bluesky specifics:
 - **Hard 300-character limit. Count before posting, never exceed.**
 - Dry, precise, slightly detached tone. Audience is fintech builders and quants.
-- One specific data point per post. 1-2 hashtags max. No brand mentions.
+- One specific data point per post. No brand mentions.
 - 5 standalone posts per run, each a complete observation.
 
 ## Reconciliation with routine rules
 
-- **Standalone, not threads** for automated posts. **No hashtags on X. No engagement-bait
-  CTAs.**
-- **No financial advice or price targets.** Keep conviction and specificity, frame as
-  observation and mechanism, never an explicit buy/sell/price call.
+- **Hybrid posting:** 1 standalone per run; every 4th run posts one linear 2–4 tweet thread.
+- **Media allowed and encouraged:** attach a chart/card image to most posts (~4.5x reach in our data).
+- **No hashtags on X. No engagement-bait CTAs** (the farm levers above use organic questions, not "agree? 👇").
+- **No financial advice or price targets.** Keep conviction and specificity; frame as observation and
+  mechanism, never an explicit buy/sell/price call.
 - Apply the account voice and the `social/SKILL.md` per-platform structure on top of this.

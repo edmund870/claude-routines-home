@@ -1,2 +1,4 @@
 # Private — local routine source / secrets. Never pushed.
 private/
+/x-algorithm
+/X_posts
