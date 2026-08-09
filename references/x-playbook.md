@@ -28,10 +28,23 @@ video_view, photo_expand, share, **dwell** (time spent on the post), follow_auth
 
 **Negative signals** (push content DOWN): not_interested, block, mute, report.
 
-**On weights:** xAI does **not** publish the weight values. Optimize for signal *direction* — which
-signals fire and whether they're positive or negative — never for made-up multipliers. Third-party
-figures floating around ("replies 27x", "report 369x", "velocity 1000x", e.g. teract.ai) are
-**unverified/fabricated** and must not be cited as fact.
+**On weights:** xAI does **not** publish weight values for the current Phoenix ranker. Optimize for
+signal *direction* — which signals fire and whether they're positive or negative — never for
+specific multipliers. Third-party figures floating around ("replies 27x", "report 369x", "velocity
+1000x") trace back to the **2023 heavy-ranker** release, a real but now-obsolete system — treat them
+as historically directional at best, not current Phoenix weights, and never cite as fact.
+
+## Original Content Rewards Program (from Sept 2026)
+
+Replaces Revenue Sharing. Payout is on **qualified impressions**: unique views from Premium
+subscribers on the Home Timeline, ≥50% of post visible, replies excluded. This is narrower than
+total reach — the OON/retrieval reach mechanics below still drive growth and eligibility (needs
+500+ verified followers, 500k+ verified Home Timeline impressions/90 days), but raw impression
+counts in analytics will not track payout $ 1:1. Track the program's own eligibility counter
+(Creator Studio → Original Content Rewards) rather than estimating from total impressions.
+
+Growing the **follow_author** gap (see below — currently near-zero) now does double duty: it's
+both the biggest untapped ranking signal and a hard eligibility gate (500 verified followers).
 
 ## Reach is out-of-network
 
@@ -124,7 +137,11 @@ no single tactic saturates:
   toxic.** block/mute/report are negative signals; a take that gets you reported costs more than it
   earns.
 - **(d)** Motivational posts.
-- **(e)** Famous-investor quotes (Buffett etc.).
+- **(e)** Famous-investor quotes (Buffett etc.) — **never post the quote bare.** Under the Original
+  Content Rewards Program (replaces Revenue Sharing from Sept 2026), a post's value must come
+  primarily from what we add. Pair every quote with a specific market-mechanic tie-in (a number,
+  positioning, trade implication) — the quote becomes supporting material, not the payload. A quote
+  + generic caption reads as insufficiently transformed.
 
 ## Craft that still holds
 
