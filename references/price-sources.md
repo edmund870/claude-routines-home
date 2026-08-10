@@ -131,6 +131,23 @@ the last market close and state the date alongside the number.
 
 ---
 
+## Untrusted Auxiliary Sources (use with hard constraints, not for verification)
+
+These are NOT verification sources — they don't satisfy the "2+ independent sources" rule and
+never substitute for the sources above. Listed here because they're pulled by an automated routine
+with no human in the loop, so their trust boundary needs to be documented somewhere durable, not
+left as freestanding caveats inside one step of one routine file where they're easy to lose on the
+next edit.
+
+| Source | URL pattern | Used by | Constraints |
+|---|---|---|---|
+| everyticker.com | `https://everyticker.com/api/quote/{TICKER}/financial-analysis` | Ticker Pulse (`private/box-instructions-ticker-pulse.md` Step 3.5) | Cached article, not live (`article_date` field, `cached: true`). Verified live failure: served TEAM at a 3-month-stale $85/share with a negative P/E days after the real print put it at ~$150 with positive GAAP EPS. Hard rules: discard if `article_date` >45 days old; discard any qualitative claim that overlaps the same subject as that day's verified catalyst (moats/competitive position/pipeline dependency go stale exactly as fast as numbers do when a legal/regulatory/competitive event flips them); any surviving qualitative claim needs one independent confirming search before use, never taken as-is (likely LLM-generated, single-source, `cached: true`); never use any numeric field, ever, regardless of date; never name it in published text. |
+
+**If adding another auxiliary source to any routine:** document it here with the same shape
+(source, used by, constraints) rather than only inline in the routine file.
+
+---
+
 ## General Verification Protocol
 
 1. **Search first:** Run `"[index/asset] close [date]"` in web search to surface multiple sources simultaneously
