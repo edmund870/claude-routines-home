@@ -65,7 +65,11 @@ Two devices that work well for hook + mechanism specifically:
 - **"No news, just flow"** — when trending has no external catalyst, say so. A verified absence of
   news is itself a legitimate, honest hook; don't manufacture a mechanism that isn't there.
 
-**280–500 chars target, 600 hard cap.** `$TICKER` format always.
+**280–500 chars target (up to the 600 cap when a Step 3.5 context line survives all four gates).**
+`$TICKER` format always. Matches `references/x-playbook.md`'s updated default: the ranker's
+continuous dwell-time weight rewards posts that hold attention, and this account's data shows
+280–600 outperforming 150–280 on reach — length earned by substance (a real mechanism, real
+numbers), never padding.
 
 ## Voice (same 4 pillars as `private/voice.md`, condensed for this format)
 
