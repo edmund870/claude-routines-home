@@ -139,6 +139,35 @@ so nearly all reach is OON — retrieval, not your follower graph, decides who s
 | **dwell (predicted seconds — the largest live weight)** | a post dense enough to hold the eye: layered numbers, a mechanism worth reading twice, a thread |
 | follow_author (the real growth signal — profile_click is weighted 0.0) | a take compelling enough that they want more from you (currently our biggest gap) |
 
+### Writing for copy-link share specifically (the single heaviest weight, 40× a like)
+
+Copy-link share and retweet are not the same trigger, even though both look like "sharing" from
+the outside. **Retweet is public endorsement** — the trigger is "I want my followers to see this
+reflects on me." **Copy-link/DM share is private utility** — the trigger is "this specific thing
+applies to a specific person I know." Writing for the two pulls in different directions: a hot
+take optimizes for retweet, a resolved argument or a reusable reference optimizes for copy-link.
+
+What actually gets forwarded to one person instead of broadcast to a timeline:
+
+- **Content that settles an argument.** A post that resolves a live disagreement gets sent to
+  whoever's on the other side of it. Data stated flatly, no hedge, works better here than a take.
+- **A self-contained payload.** A number, table, or framework complete enough to forward alone,
+  with no context needed from the sender. Half-finished takes don't get shared because the sender
+  would have to explain them.
+- **Reference value over reaction value.** A framework or dated calendar someone bookmarks to send
+  next time it's relevant beats a hot reaction to today's move. This is the same untested lever
+  flagged above under follows/bookmarks — frameworks, historical tables, dated calendars — copy-link
+  share and follow_author plausibly respond to the same content type, since both are "keep this"
+  behaviors, unlike retweet's "broadcast this."
+- **Specificity that maps to a specific person's situation.** "If you're holding $XYZ into
+  earnings" reads as forward-bait because the reader immediately thinks of who that applies to.
+
+Hook shapes that lean into this instead of a generic take:
+- "The [mechanism] explanation for why [X] happened, in one line:" — self-contained, answer-shaped
+- A numbered framework or short table people screenshot-forward
+- "Bookmark this for next [earnings/FOMC/OPEX]" — explicit reference framing
+- Settling a live disagreement with a number, stated flat, no hedge
+
 ---
 
 ## Threads: hybrid policy — a dwell play, not a reach multiplier

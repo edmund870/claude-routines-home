@@ -60,8 +60,14 @@ part just means fewer line breaks, never filler to fill the gap.
 
 Two devices that work well for hook + mechanism specifically:
 - **Divergence framing** — price action vs. retail sentiment moving opposite directions is often
-  the sharpest available angle: "$XYZ down 4% on the print. Crowd's still 70% bullish. One of them
-  is wrong." This is honest, specific, and needs no invented drama.
+  the sharpest available angle. The mechanic is "two things pointing opposite ways, say so
+  plainly" — it is NOT a sentence template. **Never reuse a closing clause like "one of them is
+  wrong" / "somebody's about to be wrong" across posts.** Each divergence post needs its own
+  phrasing built from that run's actual numbers: what moved, by how much, what the crowd is still
+  doing, stated in whatever words fit that specific setup. Two posts sharing the same skeleton
+  read as templated to a human reader, and the algorithm has a coded duplicate-text detector
+  (`BBQDuplicateTextProd.bot`, clusters posts by matching text, labels matches `COPYPASTA_SPAM`)
+  that near-identical closing clauses can trip at volume.
 - **"No news, just flow"** — when trending has no external catalyst, say so. A verified absence of
   news is itself a legitimate, honest hook; don't manufacture a mechanism that isn't there.
 
@@ -108,8 +114,12 @@ line if convenient — not mandatory, just avoid an obvious back-to-back repeat)
 
 > $DEF down 6% on the print.
 >
-> Crowd's still sitting 74% bullish. Somebody's about to be right and somebody's about to be
-> wrong.
+> Sentiment barely moved off 74% bullish. Either the print didn't tell the crowd anything new, or
+> nobody's actually looked at it yet.
+
+(Note this is one possible phrasing of the divergence device for this specific setup, not a
+template — the next divergence post needs its own words built from that day's actual numbers, see
+the warning above.)
 
 The $TEAM example's third line ("fighting Microsoft and ServiceNow on scale") is the optional
 context step — competitor color, no new number, dropped in because it was actually fresh that run.
