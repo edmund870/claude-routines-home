@@ -142,16 +142,21 @@ Two devices that work well for hook + mechanism specifically:
 - **"No news, just flow"** — when trending has no external catalyst, say so. A verified absence of
   news is itself a legitimate, honest hook; don't manufacture a mechanism that isn't there.
 
-**280–500 chars target (up to the 600 cap when a Step 3.5 context line survives all four gates).**
-`$TICKER` format always. Matches `references/x-playbook.md`'s updated default: the ranker's
-continuous dwell-time weight rewards posts that hold attention, and this account's data shows
-280–600 outperforming 150–280 on reach — length earned by substance (a real mechanism, real
-numbers), never padding.
+## Length
 
-**Deep-Dive format (see above): up to ~1000 chars.** Only when the catalyst genuinely has that
-much real information in it, regardless of what kind of catalyst it is, and only once the mandatory
-synthesis line is included — don't hit 1000 chars of pure fact relay and skip the read. If the
-facts (plus synthesis) run out at 650 chars, stop at 650.
+Two different targets for two different formats — don't mix them up:
+
+- **Standard format: 280–500 chars target** (up to a 600 cap when a Step 3.5 context line survives
+  all four gates). `$TICKER` format always. Matches `references/x-playbook.md`'s updated default:
+  the ranker's continuous dwell-time weight rewards posts that hold attention, and this account's
+  data shows 280–600 outperforming 150–280 on reach — length earned by substance (a real mechanism,
+  real numbers), never padding.
+- **Deep-Dive format: up to ~1000 chars, hard cap.** No fixed floor — a real Deep-Dive post (hook,
+  detail, result, mandatory synthesis, optional forward-look) will rarely land under ~600 chars
+  just from having that many parts, but let the facts set the length, not a target number. Stop the
+  moment the facts (and the synthesis line) run out — 700 chars of real substance beats 1000 chars
+  with 300 padded on. Never force it past 1000 to "use the full cap," and never use this cap for the
+  standard format — that one stops at 600.
 
 ## Voice (same 4 pillars as `private/voice.md`, condensed for this format)
 
