@@ -54,6 +54,77 @@ KICKER: declarative skeptical read (default) OR a genuine question (engagement-f
 This runs longer than a bare X hook-kicker — the context line is what earns the extra length, not
 padding. Skip it entirely rather than stretch for length with nothing real to add.
 
+## Deep-Dive Format (major verified catalysts)
+
+Use this instead of the standard structure whenever Step 3 verification turns up a catalyst with
+real documented substance — **this is not limited to trials or FDA decisions.** Any of these
+qualify equally: an earnings print with specific figures, an M&A/partnership/contract announcement,
+an insider Form 4 or 13F institutional-holdings disclosure, an analyst note with a specific
+target and stated reasoning, a debt/convertible-note raise, a buyback authorization, an executive
+transition, a product or tech launch/deal. The common thread isn't the topic, it's the density: can
+you fill 3-4 short paragraphs where each sentence is a fact the reader didn't already have? If yes,
+use this format regardless of sector or catalyst type. If the catalyst is thin (a rating change with
+no detail, a headline with nothing under it), don't force this format — fall back to the standard
+structure or a shorter post.
+
+**Provenance note, read before trusting the numbers below:** the highest-impression examples of
+this shape (~800 to ~10,800 impressions in one week) were observed on this account's timeline, but
+confirmed as posted manually or via a tool outside this routine — not a proven track record of this
+routine's own output. Treat them as evidence of what the *audience* responds to, not evidence this
+routine has already achieved it. That gap matters because of what comes next.
+
+**This directly collides with a documented, larger-sample rule, and the reconciliation is the
+format below.** `references/x-playbook.md` and `private/voice.md`, both built from 2,316 posts over
+43 days on this same account, explicitly **ban take-free newswire recitation as the lowest-
+performing pattern** and require every winning post to close on the account's own read. The
+observed high-impression posts were pure fact relay with no synthesis anywhere in them — exactly
+the shape that larger dataset flags as weakest for follows and bookmarks, even where raw impressions
+spiked. Both datasets are real. The resolution: **take the density and length** (the coded
+continuous dwell-time weight is real and rewards this), **but keep the synthesis** (the coded
+originality gates don't cover this, but the account's own much larger sample says take-free relay is
+the weakest format for anything beyond a raw impression count). A Deep-Dive post is not exempt from
+having a read — it just delivers that read after the facts instead of as a punchy kicker.
+
+**Why the length itself plausibly helps, independent of the synthesis point:** these posts run long
+enough to hit X's "Show more" truncation in the feed, and (on the observed examples) Detail Expands
+and URL Clicks ran far higher than on standard-format posts. A dense post that gets cut off
+mid-sentence is a legitimate curiosity-gap hook — the reader taps to see the rest, which is the
+dwell-time and click signal the ranker rewards. Front-load the single sharpest fact in the first
+line so the post stands on its own even un-expanded, then let supporting detail run past the fold.
+
+```
+HOOK: who + what happened + the specific verified result, no wind-up
+DETAIL: what was actually announced/tested/filed — the subject (drug, deal, filing, product,
+        contract), the counterparty or market it touches, the specific terms
+RESULT: the actual numbers or outcome — could be efficacy data, revenue/EPS, deal size, stake
+        size, target price, guidance figure — whatever the catalyst's real payload is
+SYNTHESIS: one line, the account's own read — what this actually means, what it implies, what's
+        easy to miss in the raw numbers. Not a question, not a spicy kicker, but not absent either
+        — this is the line that keeps the post from being pure wire-copy relay
+FORWARD-LOOK (optional): what happens next — a regulatory filing, next earnings print, close date,
+        vesting/lockup date, next 13F/Form 4 cycle — only if there's a genuine next date, don't
+        invent one
+```
+
+Differences from the standard format worth naming explicitly:
+- **No forced question or engagement-bait kicker — but the synthesis line is mandatory, not
+  optional.** This is the one hard rule this format cannot drop. A Deep-Dive post with hook,
+  detail, and result but no synthesis is a take-free newswire dump — banned, same rule as Routine A.
+- **Retail sentiment is optional, often absent entirely.** This format is reporting the verified
+  catalyst, not framing a retail-vs-verified divergence. Only include a sentiment line if it's
+  actually the sharpest angle available (rare for this format — usually it isn't).
+- **Tone drops the loose-grammar voice pillar for the hook/detail/result lines.** Straight, precise,
+  newswire-register prose reads as more credible for this kind of factual density than the account's
+  usual hyperdirect style. The synthesis line can still carry the account's normal voice — it's
+  where the persona shows up in this format. Still no financial advice, no price targets, no
+  hashtags, no em dashes — those hard rules never lift.
+- **Every sentence must be new information.** This is the format most likely to accidentally pad
+  ("this represents an important step forward" is filler; "they plan to file with regulators this
+  quarter" is not). If a sentence could be deleted without losing a fact, delete it. The synthesis
+  line is the one exception that's allowed to be interpretation rather than a fact — that's its job.
+- **Longer length ceiling: up to ~1000 chars** (vs. 600 for the standard format) — see Length
+  section below.
+
 **Paragraph it.** One blank line between each present part (hook / mechanism / context / kicker),
 not a single run-on block — same scannability logic as the LinkedIn/Telegram formats. A skipped
 part just means fewer line breaks, never filler to fill the gap.
@@ -76,6 +147,11 @@ Two devices that work well for hook + mechanism specifically:
 continuous dwell-time weight rewards posts that hold attention, and this account's data shows
 280–600 outperforming 150–280 on reach — length earned by substance (a real mechanism, real
 numbers), never padding.
+
+**Deep-Dive format (see above): up to ~1000 chars.** Only when the catalyst genuinely has that
+much real information in it, regardless of what kind of catalyst it is, and only once the mandatory
+synthesis line is included — don't hit 1000 chars of pure fact relay and skip the read. If the
+facts (plus synthesis) run out at 650 chars, stop at 650.
 
 ## Voice (same 4 pillars as `private/voice.md`, condensed for this format)
 
@@ -126,6 +202,58 @@ context step — competitor color, no new number, dropped in because it was actu
 The other two skip it entirely because there was nothing real to add — fewer line breaks, not
 padding to fill them.
 
+**Deep-Dive format examples** (structure only — write your own facts from that day's actual
+verified catalyst, never reuse this phrasing). The shape is identical no matter what kind of
+catalyst it is:
+
+> $XYZ and $ABC reported positive Phase 3 results from their trial, which met its primary endpoint.
+>
+> The trial tested the combination therapy in patients with [specific population/indication],
+> against standard treatment.
+>
+> Patients on the combination saw a significant reduction in [the actual measured outcome] versus
+> standard therapy, with safety data consistent with prior results.
+>
+> [SYNTHESIS] That bar has only been cleared this cleanly a handful of times in the class, which is
+> why the read-through hits [related tickers/the sector], not just the two names that ran the trial.
+>
+> Both companies plan to file with regulators this quarter, with full data presented at an upcoming
+> medical conference.
+
+> $XYZ reported Q[N] adjusted EPS of $[X], beating consensus of $[Y] by [Z]%, while revenue rose
+> [N]% year-over-year to $[amount] versus estimates of $[amount].
+>
+> [Specific product/segment] revenue reached a record $[amount] in the quarter, with [margin metric]
+> expanding to [N]%.
+>
+> Management pointed to [specific driver — new contract, capacity expansion, pricing] as the main
+> lever for the beat, not a one-time item.
+>
+> [SYNTHESIS] That's the detail worth sitting with: a beat built on [durable driver] reads
+> differently than one built on [a one-time item], even when the headline number looks the same.
+>
+> The company guides for [specific figure] next quarter, [above/below/in line with] the current
+> Street estimate of $[amount].
+
+> $XYZ disclosed a Form 4 filing showing [insider name, title] sold [N] shares on [date] at prices
+> ranging from $[low] to $[high], totaling roughly $[amount] in proceeds.
+>
+> The sale followed [specific recent event — a rally, a guidance raise, a lockup expiry] and
+> represents [N]% of the insider's total holding per the filing.
+>
+> [SYNTHESIS] [Whether this reads as routine (a scheduled 10b5-1, a small fraction of the stake) or
+> as a signal (first sale in N months, part of a cluster across multiple insiders) — the account's
+> own read on which it is, not just the raw filing numbers].
+
+Four to five short paragraphs, one blank line between each, no forced kicker or question, no retail
+sentiment unless it's genuinely the sharpest angle, **one mandatory synthesis line** placed wherever
+it reads best (often after the numbers, sometimes better placed right after the hook — judgment
+call per post). Every fact-line adds something the reader didn't already have; the synthesis line
+adds the account's own read on what those facts mean. This shape — applied to trial data, earnings,
+insider filings, debt raises, analyst notes, deals — is what the account's highest-impression posts
+of the week looked like; the synthesis line is what keeps a Deep-Dive post from being the take-free
+newswire dump the account's larger dataset already proved doesn't work.
+
 ## Avoid
 
 - Manufacturing a catalyst when there isn't one (say "no news, just flow" instead)
@@ -136,3 +264,11 @@ padding to fill them.
 - Generic momentum language with no specific number ("shares are moving today")
 - Stretching for length with filler once the real content runs out
 - Any buy/sell/hold framing, however softened
+- Forcing the Deep-Dive format onto a thin catalyst just to chase length — if there aren't 3-4
+  paragraphs of real new facts, use the standard format instead
+- Publishing a Deep-Dive post with no synthesis line — hook/detail/result with nothing else is a
+  take-free newswire dump, the exact pattern `references/x-playbook.md` and `private/voice.md`
+  document as this account's lowest-performing style over its largest dataset
+- Reporting a catalyst that isn't actually current — confirm the news date against today's date
+  (Step 0's `get_time` call) before drafting; a real event from last week framed like it just
+  happened is a factual error, not a stylistic one
