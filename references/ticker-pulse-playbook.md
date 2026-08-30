@@ -144,19 +144,31 @@ Two devices that work well for hook + mechanism specifically:
 
 ## Length
 
+**Bias toward the longer end — this account's Buffer/X connection had a confirmed hard 280-char
+cap that blocked anything past it outright (rejected, not truncated); Edmund refreshed the account
+2026-08-30 and confirmed long-form now posts clean.** The lengths below were always the design
+target, just briefly unreachable in practice — draft toward them now, don't hedge short out of
+habit from that window.
+
 Two different targets for two different formats — don't mix them up:
 
-- **Standard format: 280–500 chars target** (up to a 600 cap when a Step 3.5 context line survives
-  all four gates). `$TICKER` format always. Matches `references/x-playbook.md`'s updated default:
-  the ranker's continuous dwell-time weight rewards posts that hold attention, and this account's
-  data shows 280–600 outperforming 150–280 on reach — length earned by substance (a real mechanism,
-  real numbers), never padding.
-- **Deep-Dive format: up to ~1000 chars, hard cap.** No fixed floor — a real Deep-Dive post (hook,
-  detail, result, mandatory synthesis, optional forward-look) will rarely land under ~600 chars
-  just from having that many parts, but let the facts set the length, not a target number. Stop the
-  moment the facts (and the synthesis line) run out — 700 chars of real substance beats 1000 chars
-  with 300 padded on. Never force it past 1000 to "use the full cap," and never use this cap for the
-  standard format — that one stops at 600.
+- **Standard format: 400–600 chars target, not 280.** Treat the Step 3.5 context line (surviving
+  all four `references/price-sources.md` gates) as the normal way to reach the top of that
+  range, not a rare bonus tier — actively look for one before settling for a short post. Only drop
+  toward 280 when the story genuinely doesn't support more (a bald number with no real mechanism
+  behind it). `$TICKER` format always. Matches `references/x-playbook.md`'s updated default: the
+  ranker's continuous dwell-time weight rewards posts that hold attention, and this account's data
+  shows 280–600 outperforming 150–280 on reach — length earned by substance (a real mechanism, real
+  numbers), never padding.
+- **Deep-Dive format: up to ~1000 chars, hard cap — reach for this first, not last.** Before
+  defaulting to the standard format, check whether today's catalyst clears the density test above;
+  a surprising number of real catalysts do once you look (see the qualifying list above — it's
+  wider than it first seems). No fixed floor — a real Deep-Dive post (hook, detail, result,
+  mandatory synthesis, optional forward-look) will rarely land under ~600 chars just from having
+  that many parts, but let the facts set the length, not a target number. Stop the moment the facts
+  (and the synthesis line) run out — 700 chars of real substance beats 1000 chars with 300 padded
+  on. Never force it past 1000 to "use the full cap," and never use this cap for the standard
+  format — that one stops at 600.
 
 ## Voice (same 4 pillars as `private/voice.md`, condensed for this format)
 
