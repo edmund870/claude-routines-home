@@ -40,21 +40,25 @@ do not optimize for it. `follow_author` (4.0) is the real growth signal.
 
 | Signal | Weight | vs. a like |
 |---|---|---|
-| **share via copy link** | **20.0** | **40×** |
-| reply | 5.0 | 10× |
-| quote | 5.0 | 10× |
-| share via DM | 5.0 | 10× |
-| follow author | 4.0 | 8× |
-| share (generic) | 2.0 | 4× |
-| repost | 1.0 | 2× |
-| favorite | 0.5 | 1× |
-| click | 0.4 | — |
+| **share via copy link** | **20.0** | **~30×** |
+| reply | 5.0 (+15.0 if mutual follow, original posts) | ~7.6× (~30× mutual) |
+| quote | 5.0 | ~7.6× |
+| share via DM | 5.0 | ~7.6× |
+| follow author | 4.0 | ~6× |
+| share (generic) | 2.0 | ~3× |
+| repost | 1.0 | ~1.5× |
+| favorite | 0.66 | 1× |
+| click | 0.3 | — |
+| click-dwell (seconds after click) | 0.4 × predicted seconds | — |
 | open link | +0.2 | — |
-| photo expand / video open / VQV | 0.05 | — |
-| **continuous dwell time** | **0.004 × predicted seconds** | see below |
+| photo expand | 0.05 | — |
+| dwell (binary "did they dwell") | 0.05 | live (was 0.0) |
+| video open | 0.02 | — |
+| post unexplored | 0.015 | — |
+| VQV | 0.0 | dead |
+| **continuous dwell time** | **0.006 × predicted seconds** | see below |
 | profile click | 0.0 | dead |
-| dwell (binary "did they dwell") | 0.0 | dead |
-| not interested | −43.2 | |
+| not interested | −52.272 | |
 | block author | −31.2 | |
 | mute author | −58.8 | |
 | report | −234.0 | |
@@ -72,14 +76,50 @@ multiplied by **0.75**.
    correction to a common misreading. Never do arithmetic on these numbers against engagement
    counts.
 2. **Dwell time is the one exception — it multiplies seconds, not a probability.** The binary
-   "did they dwell" weight is 0.0 (dead). The live channel is `ContDwellTimeWeight = 0.004`,
+   "did they dwell" weight is now 0.05 (live since the 13 Oct change; it was 0.0). The big channel is `ContDwellTimeWeight = 0.006`,
    applied to a *predicted dwell duration in seconds* (trained as `dwell-time-mae` over raw
    seconds, served as `predicted_dwell_sec` with no denormalization). Every other positive weight
    scales a value in the 0.001–0.05 range; dwell scales a value in the 0–30 range. At a predicted
-   10s dwell the term alone (0.04) already exceeds most other single terms. **Dwell time is
+   10s dwell the term alone (0.06) already exceeds most other single terms. **Dwell time is
    plausibly the largest positive contributor to the score for a post that holds attention** — this
    is inference from the units involved, not a published ranking, since the code doesn't publish
    baseline predicted rates.
+
+### Post-drop updates (xai-org/x-algorithm "Notable Updates", checked 31 Oct 2026)
+
+- **8 Oct 2026 — ranking:** Phoenix now estimates time spent per post more accurately. No weight
+  change published at the time; the weight was later raised to 0.006 on 13 Oct (see below), and the
+  prediction feeding it is sharper, so posts that actually hold attention are rewarded more reliably and padded posts
+  are caught more reliably.
+- **13 Oct 2026 — retrieval:** Phoenix retrieval is also trained to surface posts people **read
+  through to the end**. Completion now helps OON placement, not just ranking. Keep posts tight
+  enough to finish: front-load the number, no filler paragraph, kicker that pays off the hook.
+- **18 Sep 2026:** Under the Hood reports show legal-compliance visibility limits. Transparency
+  only; no impact on scoring.
+- **26 Oct 2026:** `Brazil2026ElectionFilter` removed. Irrelevant to markets content.
+- **Weights re-verified against the full repo pull (31 Oct 2026, `home-mixer/params/param.rs`).**
+  The table above reflects the current defaults. Changes since the 13–14 Aug drop (per git log):
+  favorite 0.5 → 0.6 (13 Oct) → 0.66 (14 Oct); click 0.4 → 0.3 and not-interested −43.2 → −47.52
+  (29 Sep), then → −52.272 (14 Oct); continuous dwell 0.004 → 0.006 and binary dwell 0.0 → 0.05
+  (13 Oct); VQV and video-open lowered (13 Oct); post-unexplored 0.02 → 0.015 (7 Oct); click-dwell
+  0.0 → 0.4 (29 Sep). Report (−234), block (−31.2), mute (−58.8), copy-link (20), reply/quote/DM
+  (5), follow (4), share (2), repost (1) unchanged. Weights move every few days; "× a like"
+  multiples above are against the new 0.66 like.
+- **Mutual-follow reply boost.** Original posts from mutually-followed authors get +15 on the
+  reply weight (reply 5 → 20). Not reachable for a 96%-non-follower account except through
+  follower growth; another reason follows matter.
+- **Dwell implication.** Both dwell terms are now live and click-dwell (0.4 × seconds on the
+  destination after a click) is new. Posts with a chart card that earns a tap-through and a longer
+  look benefit from both.
+- **OON discount re-confirmed:** `OonWeightFactor = 0.75`. Author-diversity re-confirmed: decay
+  0.5, floor 0.25. Age wall re-confirmed: `MAX_POST_AGE = 48h`. Topical gate re-confirmed (last
+  15 posts, 50% threshold).
+- **New-author cold-start boost (params):** `ColdStartMaxPostAgeSecs = 7200` (posts ≤2 h old),
+  `ColdStartFollowerCap = 50000`, slots 15–16 in the feed, Thompson sampling on. Small accounts
+  get a shot at a feed slot only in the first 2 hours of a post's life: first-hour timing matters
+  more than before.
+- **Reply indexing nuance:** a `32fav_reply` index exists, but `EnablePhoenixOonReplies` defaults
+  to `false`. Treat replies as non-OON unless that flips.
 
 ## Original Content Rewards Program (from Sept 2026)
 
@@ -131,7 +171,7 @@ so nearly all reach is OON — retrieval, not your follower graph, decides who s
 
 | Want | Trigger |
 |---|---|
-| share via copy-link (heaviest weight, 40× a like) | content worth sending to one specific person — a stat, a table, a framework they'll actually use |
+| share via copy-link (heaviest weight, ~30× a like) | content worth sending to one specific person — a stat, a table, a framework they'll actually use |
 | favorite | novel insight, memorable phrasing, a strong opinion backed by data |
 | reply | a real question, a genuine debate, an incomplete thought that invites completion |
 | repost / quote | useful info people want to share, representational value (it speaks for them), an information edge (you had it first) |
@@ -139,7 +179,7 @@ so nearly all reach is OON — retrieval, not your follower graph, decides who s
 | **dwell (predicted seconds — the largest live weight)** | a post dense enough to hold the eye: layered numbers, a mechanism worth reading twice, a thread |
 | follow_author (the real growth signal — profile_click is weighted 0.0) | a take compelling enough that they want more from you (currently our biggest gap) |
 
-### Writing for copy-link share specifically (the single heaviest weight, 40× a like)
+### Writing for copy-link share specifically (the single heaviest weight, ~30× a like)
 
 Copy-link share and retweet are not the same trigger, even though both look like "sharing" from
 the outside. **Retweet is public endorsement** — the trigger is "I want my followers to see this
@@ -175,7 +215,7 @@ Hook shapes that lean into this instead of a generic take:
 Threads are no longer manual-only. **Every 4th routine run posts ONE connected thread (2–4 tweets)**
 chained via Buffer; the other runs post a single standalone.
 
-- **Why keep them:** dwell time is real and heavily weighted (0.004 × predicted seconds — plausibly
+- **Why keep them:** dwell time is real and heavily weighted (0.006 × predicted seconds — plausibly
   the largest single positive term). A thread that holds attention across several tweets is a
   legitimate way to earn a large dwell prediction.
 - **What they do NOT do:** a thread does not multiply your reach. `DedupConversationFilter` collapses
@@ -221,7 +261,9 @@ with the photo_expand positive signal.
 - **Length — bias LONGER, 280–600 chars is now the default target, 600 hard cap stays.** The
   account's own data already shows this band gets the best reach (~75 vs ~29 impressions for
   150–280), and the published dwell weight explains why: more substantive text means more time
-  spent reading, which is now the single largest live positive term. There is no length feature in
+  spent reading, which is now the single largest live positive term. Since 13 Oct, retrieval also
+  favors posts read to the end, so aim for the lower-middle of the band (280–450) unless the
+  content genuinely needs more. There is no length feature in
   the ranker itself — length only matters through (a) dwell seconds and (b) giving the embedding
   model enough text to place your post accurately in topic space. That means the floor matters as
   much as the target: a post too thin to be topically legible (e.g. "$META longs!") produces an
